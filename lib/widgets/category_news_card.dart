@@ -4,7 +4,7 @@ import 'package:my_news_app/screens/article_screen.dart';
 import '../models/article_model.dart';
 
 class CategoryNewsCard extends StatelessWidget {
-  CategoryNewsCard({super.key, required this.article});
+  const CategoryNewsCard({super.key, required this.article});
   final ArticleModel article;
 
   @override
@@ -32,8 +32,8 @@ class CategoryNewsCard extends StatelessWidget {
               image: NetworkImage(article.urlToImage ??
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRnNtXQ3-FIvU4vk8Z0E0QDiwe5i3jpZXE6-EsWpalje4cIQvXgvF5FquiFeNG2adQE4M&usqp=CAU"),
               fit: BoxFit.fill,
-              colorFilter: new ColorFilter.mode(
-                  Colors.grey.withOpacity(0.3), BlendMode.srcOver),
+              colorFilter: ColorFilter.mode(
+                  Colors.grey.withValues(alpha:0.3), BlendMode.srcOver),
             ),
             borderRadius: BorderRadius.circular(8),
           ),
@@ -44,7 +44,7 @@ class CategoryNewsCard extends StatelessWidget {
               children: [
                 Text(
                   article.title ?? 'title',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -58,7 +58,7 @@ class CategoryNewsCard extends StatelessWidget {
                   children: [
                     Text(
                       article.author ?? 'Author',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         //fontFamily: 'Nunito',
@@ -66,7 +66,7 @@ class CategoryNewsCard extends StatelessWidget {
                     ),
                     Text(
                       article.publishedAt ?? 'Date',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         //fontFamily: 'Nunito',

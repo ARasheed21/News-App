@@ -5,7 +5,7 @@ import 'package:my_news_app/cubits/get_news_cubit.dart';
 import '../utils/app_colors.dart';
 
 class CategoryListView extends StatefulWidget {
-  CategoryListView({super.key});
+   CategoryListView({super.key});
 
 
   final List<String> categories = ['General','Business','Technology','science','Sport','Health','Entertainment'];
@@ -37,7 +37,7 @@ class _CategoryListViewState extends State<CategoryListView> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: widget.selectedIndex == i? AppColors.primary:Colors.white,
-                border: Border.all(color: Color(0xffe9eafa)),
+                border: Border.all(color: const Color(0xffe9eafa)),
               ),
               child: Text(
                 widget.categories[i],
@@ -51,7 +51,7 @@ class _CategoryListViewState extends State<CategoryListView> {
           );
         },
         separatorBuilder: (context, i) {
-          return SizedBox(
+          return const SizedBox(
             width: 5,
           );
         },

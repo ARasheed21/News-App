@@ -6,7 +6,7 @@ import '../models/article_model.dart';
 
 class ArticleScreen extends StatelessWidget {
   final ArticleModel article;
-  ArticleScreen({super.key, required this.article});
+  const ArticleScreen({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ArticleScreen extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Icon(Icons.arrow_circle_left_rounded),
+        child: const Icon(Icons.arrow_circle_left_rounded),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -41,11 +41,11 @@ class ArticleScreen extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                       top: 100, left: 16, right: 16, bottom: 16),
                   width: 500,
                   height: 600,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(16)),
@@ -55,7 +55,7 @@ class ArticleScreen extends StatelessWidget {
                       Text(
                         ArticleModel.updatedContent(article.content) ??
                             'Content',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           fontFamily: 'Nunito',
@@ -90,21 +90,21 @@ class ArticleScreen extends StatelessWidget {
                   height: 170,
                   width: 350,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/images/blur.png'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           article.publishedAt ?? 'Date',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                             fontFamily: 'Nunito',
@@ -112,7 +112,7 @@ class ArticleScreen extends StatelessWidget {
                         ),
                         Text(
                           article.title ?? 'Title',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 18,
                             fontFamily: 'Nunito',
@@ -122,7 +122,7 @@ class ArticleScreen extends StatelessWidget {
                         ),
                         Text(
                           'Published By ${article.author ?? 'Author'}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 14,
                             fontFamily: 'Nunito',

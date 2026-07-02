@@ -6,7 +6,7 @@ import 'package:my_news_app/models/article_model.dart';
 import 'latest_news_card.dart';
 
 class LatestNewsListView extends StatelessWidget {
-  LatestNewsListView({super.key, required this.articles});
+  const LatestNewsListView({super.key, required this.articles});
   final List<ArticleModel> articles;
 
   @override
@@ -19,7 +19,7 @@ class LatestNewsListView extends StatelessWidget {
           return LatestNewsCard(article:articles[i]);
         },
         separatorBuilder: (context, i) {
-          return SizedBox(
+          return const SizedBox(
             width: 5,
           );
         },

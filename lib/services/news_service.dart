@@ -20,7 +20,7 @@ class NewsService{
 
   Future<List<ArticleModel>> searchNews({required String keyword})async{
     final Dio dio = Dio();
-    Response response = await dio.get('https://newsapi.org/v2/everything?q=${keyword}&apiKey=bc3817145e964e42b4604a173b3a759a');
+    Response response = await dio.get('https://newsapi.org/v2/everything?q=$keyword&apiKey=bc3817145e964e42b4604a173b3a759a');
     Map<String,dynamic> jsonData = response.data;
     List <dynamic> jsonArticles = jsonData['articles'];
     List <ArticleModel> articles = [];

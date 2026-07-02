@@ -10,7 +10,7 @@ class LatestNewsText extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           'Latest News',
           style: TextStyle(
             fontWeight: FontWeight.bold,

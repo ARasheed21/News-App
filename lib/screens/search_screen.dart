@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_news_app/cubits/search_news_cubit/search_news_cubit.dart';
-import 'package:my_news_app/utils/app_colors.dart';
 
 import '../widgets/category_news_listview.dart';
-import '../widgets/shimmer_listView.dart';
+import '../widgets/shimmer_list_view.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -23,25 +22,25 @@ class SearchScreen extends StatelessWidget {
                   BlocProvider.of<SearchNewsCubit>(context).searchNews(keyword: value);
                 },
                 decoration: InputDecoration(
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.search_rounded,
                     color: Color(0xffd2d4e0),
                   ),
                   hintText: 'Search By Keyword',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Color(0xffbabdd0),
                   ),
-                  contentPadding: EdgeInsets.all(16),
+                  contentPadding: const EdgeInsets.all(16),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xffd2d4e0),
                       width: 1,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xffd2d4e0),
                       width: 1,
                     ),
@@ -53,7 +52,7 @@ class SearchScreen extends StatelessWidget {
                   if(state is SearchNewsInitialState){
                     return Center(child: Image.asset('assets/images/start search.jpg'),);
                   } else if (state is SearchNewsLoadingState) {
-                    return Center(
+                    return const Center(
                       child: ShimmerListview(),
                     );
                   } else if (state is SearchNewsSuccessfulState) {

@@ -6,8 +6,7 @@ import 'package:my_news_app/utils/app_colors.dart';
 import 'package:my_news_app/widgets/category_listview.dart';
 import '../cubits/get_news_cubit.dart';
 import '../widgets/category_news_listview.dart';
-import '../widgets/latest_news_listview.dart';
-import '../widgets/shimmer_listView.dart';
+import '../widgets/shimmer_list_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'News App',
           style: TextStyle(
             color: Colors.white,
@@ -49,12 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SearchScreen();
+                    return const SearchScreen();
                   },
                 ),
               );
             },
-            icon: Icon(Icons.search_rounded),
+            icon: const Icon(Icons.search_rounded),
           ),
         ],
       ),
@@ -74,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BlocBuilder<GetNewsCubit, GetNewsState>(
               builder: (context, state) {
                 if (state is GetNewsLoadingState) {
-                  return Center(
+                  return const Center(
                     child: ShimmerListview(),
                   );
                 } else if (state is GetNewsSuccessfulState) {

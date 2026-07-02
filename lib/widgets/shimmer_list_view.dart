@@ -14,7 +14,7 @@ class ShimmerListview extends StatelessWidget {
           baseColor: Colors.grey[300]!,
           highlightColor: Colors.grey[100]!,
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             width: MediaQuery.of(context).size.width,
             height: 128,
             decoration: BoxDecoration(

@@ -19,8 +19,8 @@ class LatestNewsCard extends StatelessWidget {
           image: NetworkImage(article.urlToImage ??
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRnNtXQ3-FIvU4vk8Z0E0QDiwe5i3jpZXE6-EsWpalje4cIQvXgvF5FquiFeNG2adQE4M&usqp=CAU"),
           fit: BoxFit.fill,
-          colorFilter: new ColorFilter.mode(
-              Colors.grey.withOpacity(0.3), BlendMode.srcOver),
+          colorFilter: ColorFilter.mode(
+              Colors.grey.withValues(alpha: 0.3), BlendMode.srcOver),
         ),
         borderRadius: BorderRadius.circular(8),
       ),
@@ -29,13 +29,13 @@ class LatestNewsCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               article.title??'Title',
 
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -46,7 +46,7 @@ class LatestNewsCard extends StatelessWidget {
             ),
             Text(
               article.description??'Describtion',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: Colors.white,
                 //fontFamily: 'Nunito',
