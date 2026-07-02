@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_news_app/models/article_model.dart';
 import 'package:my_news_app/screens/search_screen.dart';
 import 'package:my_news_app/utils/app_colors.dart';
 import 'package:my_news_app/widgets/category_listview.dart';
