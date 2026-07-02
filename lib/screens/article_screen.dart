@@ -17,7 +17,7 @@ class ArticleScreen extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Icon(Icons.arrow_circle_left_rounded),
+        child: const Icon(Icons.arrow_circle_left_rounded, color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
