@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:my_news_app/models/article_model.dart';
+import 'package:my_news_app/features/news/data/models/article_model.dart';
 
 import 'latest_news_card.dart';
 

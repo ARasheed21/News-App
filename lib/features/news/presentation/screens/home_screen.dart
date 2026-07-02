@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_news_app/models/article_model.dart';
-import 'package:my_news_app/screens/search_screen.dart';
-import 'package:my_news_app/utils/app_colors.dart';
-import 'package:my_news_app/widgets/category_listview.dart';
+import 'package:my_news_app/features/news/domain/entity/article_entity.dart';
+import 'package:my_news_app/core/utils/app_colors.dart';
+import 'package:my_news_app/features/news/presentation/widgets/category_listview.dart';
 import '../cubits/get_news_cubit.dart';
 import '../widgets/category_news_listview.dart';
 import '../widgets/shimmer_list_view.dart';
@@ -41,21 +40,21 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: AppColors.primary,
         elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const SearchScreen();
-                  },
-                ),
-              );
-            },
-            icon: const Icon(Icons.search_rounded, color: Colors.white),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) {
+        //             return const SearchScreen();
+        //           },
+        //         ),
+        //       );
+        //     },
+        //     icon: const Icon(Icons.search_rounded, color: Colors.white),
+        //   ),
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -77,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ShimmerListview(),
                   );
                 } else if (state is GetNewsSuccessfulState) {
-                  List<ArticleModel> categorizedNewsList =
+                  List<ArticleEntity> categorizedNewsList =
                       BlocProvider.of<GetNewsCubit>(context)
                           .categorizedNewsList;
                   return CategoryNewsListView(articles: categorizedNewsList);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'cubits/get_news_cubit.dart';
-import 'cubits/search_news_cubit/search_news_cubit.dart';
-import 'screens/home_screen.dart';
-
+import 'package:my_news_app/injection.dart';
+import 'features/news/presentation/cubits/get_news_cubit.dart';
+import 'features/news/presentation/screens/home_screen.dart';
 
 void main() {
+  setupInjections();
   runApp(const MyApp());
 }
 
@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => GetNewsCubit(),
+          create: (context) => getIt<GetNewsCubit>(),
         ),
-        BlocProvider(
-          create: (context) => SearchNewsCubit(),
-        ),
+        // BlocProvider(
+        //   create: (context) => SearchNewsCubit(),
+        // ),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

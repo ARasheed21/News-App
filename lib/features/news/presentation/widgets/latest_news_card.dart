@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_news_app/models/article_model.dart';
+import 'package:my_news_app/features/news/data/models/article_model.dart';
 
 class LatestNewsCard extends StatelessWidget {
   LatestNewsCard({super.key, required this.article});

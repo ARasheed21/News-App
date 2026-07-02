@@ -42,6 +42,8 @@ dependencies:
   webview_flutter: ^4.4.2
   bloc: ^8.1.4
   meta: ^1.17.0
+  get_it: ^9.2.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

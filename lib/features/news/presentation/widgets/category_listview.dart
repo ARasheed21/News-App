@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_news_app/cubits/get_news_cubit.dart';
+import 'package:my_news_app/features/news/presentation/cubits/get_news_cubit.dart';
 
-import '../utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 
 class CategoryListView extends StatefulWidget {
    CategoryListView({super.key});

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_news_app/screens/article_screen.dart';
-
-import '../models/article_model.dart';
+import 'package:my_news_app/features/news/domain/entity/article_entity.dart';
+import 'package:my_news_app/features/news/presentation/screens/article_screen.dart';
 
 class CategoryNewsCard extends StatelessWidget {
   const CategoryNewsCard({super.key, required this.article});
-  final ArticleModel article;
+  final ArticleEntity article;
 
   @override
   Widget build(BuildContext context) {

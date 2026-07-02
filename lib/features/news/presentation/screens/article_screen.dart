@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_news_app/screens/webview_screen.dart';
-import 'package:my_news_app/utils/app_colors.dart';
+import 'package:my_news_app/features/news/domain/entity/article_entity.dart';
+import 'package:my_news_app/features/news/presentation/screens/webview_screen.dart';
+import 'package:my_news_app/core/utils/app_colors.dart';
 
-import '../models/article_model.dart';
+import '../../data/models/article_model.dart';
 
 class ArticleScreen extends StatelessWidget {
-  final ArticleModel article;
+  final ArticleEntity article;
   const ArticleScreen({super.key, required this.article});
 
   @override
