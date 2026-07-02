@@ -4,7 +4,7 @@ import 'package:my_news_app/models/article_model.dart';
 import 'package:my_news_app/screens/search_screen.dart';
 import 'package:my_news_app/utils/app_colors.dart';
 import 'package:my_news_app/widgets/category_listview.dart';
-import '../cubits/get_news_cubit.dart';
+import '../cubits/fetch_news_cubit/get_news_cubit.dart';
 import '../widgets/category_news_listview.dart';
 import '../widgets/shimmer_list_view.dart';
 
@@ -70,22 +70,32 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 8),
 
-            BlocBuilder<GetNewsCubit, GetNewsState>(
+            BlocConsumer<GetNewsCubit, GetNewsState>(
+              listener: (context, state) {
+                if (state is GetNewsFailureState) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(state.message),
+                      backgroundColor: Colors.red.shade700,
+                    ),
+                  );
+                }
+              },
               builder: (context, state) {
                 if (state is GetNewsLoadingState) {
                   return const Center(
                     child: ShimmerListview(),
                   );
                 } else if (state is GetNewsSuccessfulState) {
-                  List<ArticleModel> categorizedNewsList =
-                      BlocProvider.of<GetNewsCubit>(context)
-                          .categorizedNewsList;
-                  return CategoryNewsListView(articles: categorizedNewsList);
-                } else {
+                  return CategoryNewsListView(articles: state.articles);
+                } else if (state is GetNewsFailureState) {
                   return Center(
-                    child: Image.asset('assets/images/Something Went Wrong.png'),
+                    child:
+                        Image.asset('assets/images/Something Went Wrong.png'),
                   );
                 }
+
+                return const SizedBox.shrink();
               },
             ),
           ],

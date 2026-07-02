@@ -21,7 +21,7 @@ class ArticleModel {
     return ArticleModel(
       title: jsonData['title'],
       author: jsonData['author'],
-      content: jsonData['content'],
+      content: updatedContent(jsonData['content']),
       description: jsonData['description'],
       url: jsonData['url'],
       urlToImage: jsonData['urlToImage'],
@@ -30,16 +30,11 @@ class ArticleModel {
   }
 
   static String? updatedContent(String? content){
-
-    if(content == null){
-      return null;
+    if (content == null || !content.contains('[')) {
+      return content; // Added safety check to prevent substring errors if '[' is missing
     }
-    // Find the index of the last occurrence of the opening square bracket "[".
+    
     int bracketIndex = content.lastIndexOf('[');
-
-    // Remove the last part of the string starting from the opening bracket.
-    String updatedContent = content.substring(0, bracketIndex).trim();
-
-    return updatedContent;
+    return content.substring(0, bracketIndex).trim();
   }
 }

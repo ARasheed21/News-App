@@ -53,8 +53,7 @@ class ArticleScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        ArticleModel.updatedContent(article.content) ??
-                            'Content',
+                        article.content ?? 'Content',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -134,7 +133,6 @@ class ArticleScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
